@@ -148,6 +148,21 @@
     <Compile Include="PersonalQuery.Designer.cs">
       <DependentUpon>PersonalQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="pisLabDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pisLabDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pisLabDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pisLabDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pisLabUpdated.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pisLabUpdated.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,8 +189,35 @@
     <Compile Include="TypeOfActionQuery.Designer.cs">
       <DependentUpon>TypeOfActionQuery.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Action.resx">
+      <DependentUpon>Action.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client.resx">
+      <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Company.resx">
+      <DependentUpon>Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document.resx">
+      <DependentUpon>Document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enterprenuer.resx">
+      <DependentUpon>Enterprenuer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal.resx">
+      <DependentUpon>Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,6 +228,42 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TypeOfAction.resx">
+      <DependentUpon>TypeOfAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="pisLabDataSet11.xsc">
+      <DependentUpon>pisLabDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="pisLabDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pisLabDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pisLabDataSet11.xss">
+      <DependentUpon>pisLabDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="pisLabDataSet2.xsc">
+      <DependentUpon>pisLabDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pisLabDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pisLabDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pisLabDataSet2.xss">
+      <DependentUpon>pisLabDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="pisLabUpdated.xsc">
+      <DependentUpon>pisLabUpdated.xsd</DependentUpon>
+    </None>
+    <None Include="pisLabUpdated.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pisLabUpdated.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pisLabUpdated.xss">
+      <DependentUpon>pisLabUpdated.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,30 @@ namespace LabPIS
         public Orders()
         {
             InitializeComponent();
+        }
+
+        private void Orders_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Order". При необходимости она может быть перемещена или удалена.
+            this.orderTableAdapter.Fill(this.pisLabUpdated.Order);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Order". При необходимости она может быть перемещена или удалена.
+            this.orderTableAdapter.Fill(this.pisLabUpdated.Order);
+
+        }
+
+     
+        private void orderBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.orderBindingSource.EndEdit();
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.pisLabUpdated);
+            }
+            catch (SqlException exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, " Error");
+            }
         }
     }
 }

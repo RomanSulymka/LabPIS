@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LabPIS
 {
@@ -15,6 +16,32 @@ namespace LabPIS
         public Client()
         {
             InitializeComponent();
+        }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Client". При необходимости она может быть перемещена или удалена.
+            this.clientTableAdapter1.Fill(this.pisLabUpdated.Client);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Company". При необходимости она может быть перемещена или удалена.
+            this.companyTableAdapter.Fill(this.pisLabUpdated.Company);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Enterprenuer". При необходимости она может быть перемещена или удалена.
+            this.enterprenuerTableAdapter.Fill(this.pisLabUpdated.Enterprenuer);
+
+
+        }
+
+        private void typeActionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clientBindingSource.EndEdit();
+            try
+            {
+                this.tableAdapterManager1.UpdateAll(this.pisLabUpdated);
+            }
+            catch (SqlException exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, " Error");
+            }
         }
     }
 }

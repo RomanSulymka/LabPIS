@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,28 @@ namespace LabPIS
         public TypeOfAction()
         {
             InitializeComponent();
+        }
+
+        private void typeActionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.typeActionBindingSource.EndEdit();
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.pisLabUpdated);
+            }
+            catch (SqlException exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, " Error");
+            }
+
+        }
+
+        private void TypeOfAction_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.TypeAction". При необходимости она может быть перемещена или удалена.
+            this.typeActionTableAdapter.Fill(this.pisLabUpdated.TypeAction);
+
         }
     }
 }
