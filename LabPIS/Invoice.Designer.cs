@@ -30,26 +30,26 @@ namespace LabPIS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             System.Windows.Forms.Label documentIdLabel;
             System.Windows.Forms.Label dateOfReceiptLabel;
             System.Windows.Forms.Label numberOfTheActOfAcceptanceLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             this.pisLabUpdated = new LabPIS.pisLabUpdated();
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.InvoiceTableAdapter();
             this.tableAdapterManager = new LabPIS.pisLabUpdatedTableAdapters.TableAdapterManager();
             this.invoiceBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.invoiceBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,33 @@ namespace LabPIS
             this.invoiceBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // documentIdLabel
+            // 
+            documentIdLabel.AutoSize = true;
+            documentIdLabel.Location = new System.Drawing.Point(12, 62);
+            documentIdLabel.Name = "documentIdLabel";
+            documentIdLabel.Size = new System.Drawing.Size(69, 13);
+            documentIdLabel.TabIndex = 8;
+            documentIdLabel.Text = "document Id:";
+            // 
+            // dateOfReceiptLabel
+            // 
+            dateOfReceiptLabel.AutoSize = true;
+            dateOfReceiptLabel.Location = new System.Drawing.Point(12, 89);
+            dateOfReceiptLabel.Name = "dateOfReceiptLabel";
+            dateOfReceiptLabel.Size = new System.Drawing.Size(85, 13);
+            dateOfReceiptLabel.TabIndex = 10;
+            dateOfReceiptLabel.Text = "date Of Receipt:";
+            // 
+            // numberOfTheActOfAcceptanceLabel
+            // 
+            numberOfTheActOfAcceptanceLabel.AutoSize = true;
+            numberOfTheActOfAcceptanceLabel.Location = new System.Drawing.Point(12, 114);
+            numberOfTheActOfAcceptanceLabel.Name = "numberOfTheActOfAcceptanceLabel";
+            numberOfTheActOfAcceptanceLabel.Size = new System.Drawing.Size(175, 13);
+            numberOfTheActOfAcceptanceLabel.TabIndex = 12;
+            numberOfTheActOfAcceptanceLabel.Text = "number Of The Act Of Acceptance:";
             // 
             // pisLabUpdated
             // 
@@ -128,6 +155,31 @@ namespace LabPIS
             this.invoiceBindingNavigator.TabIndex = 8;
             this.invoiceBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -155,22 +207,16 @@ namespace LabPIS
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -178,7 +224,7 @@ namespace LabPIS
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -187,38 +233,20 @@ namespace LabPIS
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // invoiceBindingNavigatorSaveItem
             // 
             this.invoiceBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.invoiceBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("invoiceBindingNavigatorSaveItem.Image")));
             this.invoiceBindingNavigatorSaveItem.Name = "invoiceBindingNavigatorSaveItem";
-            this.invoiceBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.invoiceBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.invoiceBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.invoiceBindingNavigatorSaveItem.Click += new System.EventHandler(this.invoiceBindingNavigatorSaveItem_Click);
             // 
@@ -254,15 +282,6 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn3.HeaderText = "numberOfTheActOfAcceptance";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // documentIdLabel
-            // 
-            documentIdLabel.AutoSize = true;
-            documentIdLabel.Location = new System.Drawing.Point(12, 62);
-            documentIdLabel.Name = "documentIdLabel";
-            documentIdLabel.Size = new System.Drawing.Size(69, 13);
-            documentIdLabel.TabIndex = 8;
-            documentIdLabel.Text = "document Id:";
-            // 
             // documentIdTextBox
             // 
             this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "documentId", true));
@@ -271,15 +290,6 @@ namespace LabPIS
             this.documentIdTextBox.Size = new System.Drawing.Size(200, 20);
             this.documentIdTextBox.TabIndex = 9;
             // 
-            // dateOfReceiptLabel
-            // 
-            dateOfReceiptLabel.AutoSize = true;
-            dateOfReceiptLabel.Location = new System.Drawing.Point(12, 89);
-            dateOfReceiptLabel.Name = "dateOfReceiptLabel";
-            dateOfReceiptLabel.Size = new System.Drawing.Size(85, 13);
-            dateOfReceiptLabel.TabIndex = 10;
-            dateOfReceiptLabel.Text = "date Of Receipt:";
-            // 
             // dateOfReceiptDateTimePicker
             // 
             this.dateOfReceiptDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "dateOfReceipt", true));
@@ -287,15 +297,6 @@ namespace LabPIS
             this.dateOfReceiptDateTimePicker.Name = "dateOfReceiptDateTimePicker";
             this.dateOfReceiptDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateOfReceiptDateTimePicker.TabIndex = 11;
-            // 
-            // numberOfTheActOfAcceptanceLabel
-            // 
-            numberOfTheActOfAcceptanceLabel.AutoSize = true;
-            numberOfTheActOfAcceptanceLabel.Location = new System.Drawing.Point(12, 114);
-            numberOfTheActOfAcceptanceLabel.Name = "numberOfTheActOfAcceptanceLabel";
-            numberOfTheActOfAcceptanceLabel.Size = new System.Drawing.Size(175, 13);
-            numberOfTheActOfAcceptanceLabel.TabIndex = 12;
-            numberOfTheActOfAcceptanceLabel.Text = "number Of The Act Of Acceptance:";
             // 
             // numberOfTheActOfAcceptanceTextBox
             // 

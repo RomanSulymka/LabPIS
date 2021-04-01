@@ -24,11 +24,10 @@ namespace LabPIS
             this.orderTableAdapter.Fill(this.pisLabUpdated.Order);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Order". При необходимости она может быть перемещена или удалена.
             this.orderTableAdapter.Fill(this.pisLabUpdated.Order);
-
         }
 
-     
-        private void orderBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+
+        private void orderBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.orderBindingSource.EndEdit();

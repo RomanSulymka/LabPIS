@@ -16,5 +16,28 @@ namespace LabPIS
         {
             InitializeComponent();
         }
+
+        private void ProductQuery_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.product1TableAdapter.Fill(this.pisLabUpdated.Product1, ((int)(System.Convert.ChangeType(p1ToolStripTextBox.Text, typeof(int)))));
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void p1ToolStripLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

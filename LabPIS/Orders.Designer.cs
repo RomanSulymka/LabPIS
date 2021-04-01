@@ -53,12 +53,12 @@ namespace LabPIS
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.orderBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentIdTextBox = new System.Windows.Forms.TextBox();
             this.amountOrderedProductsTextBox = new System.Windows.Forms.TextBox();
             this.dateOfOrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -133,7 +133,7 @@ namespace LabPIS
             this.orderBindingNavigator.Name = "orderBindingNavigator";
             this.orderBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.orderBindingNavigator.Size = new System.Drawing.Size(800, 25);
-            this.orderBindingNavigator.TabIndex = 12;
+            this.orderBindingNavigator.TabIndex = 0;
             this.orderBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
@@ -228,37 +228,7 @@ namespace LabPIS
             this.orderBindingNavigatorSaveItem.Name = "orderBindingNavigatorSaveItem";
             this.orderBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.orderBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.orderBindingNavigatorSaveItem.Click += new System.EventHandler(this.orderBindingNavigatorSaveItem_Click);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "status";
-            this.dataGridViewTextBoxColumn5.HeaderText = "status";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "deadline";
-            this.dataGridViewTextBoxColumn4.HeaderText = "deadline";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "dateOfOrder";
-            this.dataGridViewTextBoxColumn3.HeaderText = "dateOfOrder";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOrderedProducts";
-            this.dataGridViewTextBoxColumn2.HeaderText = "amountOrderedProducts";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "documentId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.orderBindingNavigatorSaveItem.Click += new System.EventHandler(this.orderBindingNavigatorSaveItem_Click_1);
             // 
             // orderDataGridView
             // 
@@ -271,101 +241,131 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.orderDataGridView.DataSource = this.orderBindingSource;
-            this.orderDataGridView.Location = new System.Drawing.Point(12, 193);
+            this.orderDataGridView.Location = new System.Drawing.Point(45, 209);
             this.orderDataGridView.Name = "orderDataGridView";
-            this.orderDataGridView.Size = new System.Drawing.Size(548, 220);
-            this.orderDataGridView.TabIndex = 12;
+            this.orderDataGridView.Size = new System.Drawing.Size(546, 220);
+            this.orderDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "documentId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOrderedProducts";
+            this.dataGridViewTextBoxColumn2.HeaderText = "amountOrderedProducts";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "dateOfOrder";
+            this.dataGridViewTextBoxColumn3.HeaderText = "dateOfOrder";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "deadline";
+            this.dataGridViewTextBoxColumn4.HeaderText = "deadline";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "status";
+            this.dataGridViewTextBoxColumn5.HeaderText = "status";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // documentIdLabel
             // 
             documentIdLabel.AutoSize = true;
-            documentIdLabel.Location = new System.Drawing.Point(12, 48);
+            documentIdLabel.Location = new System.Drawing.Point(42, 60);
             documentIdLabel.Name = "documentIdLabel";
             documentIdLabel.Size = new System.Drawing.Size(69, 13);
-            documentIdLabel.TabIndex = 12;
+            documentIdLabel.TabIndex = 2;
             documentIdLabel.Text = "document Id:";
             // 
             // documentIdTextBox
             // 
             this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "documentId", true));
-            this.documentIdTextBox.Location = new System.Drawing.Point(149, 45);
+            this.documentIdTextBox.Location = new System.Drawing.Point(179, 57);
             this.documentIdTextBox.Name = "documentIdTextBox";
             this.documentIdTextBox.Size = new System.Drawing.Size(200, 20);
-            this.documentIdTextBox.TabIndex = 13;
+            this.documentIdTextBox.TabIndex = 3;
             // 
             // amountOrderedProductsLabel
             // 
             amountOrderedProductsLabel.AutoSize = true;
-            amountOrderedProductsLabel.Location = new System.Drawing.Point(12, 74);
+            amountOrderedProductsLabel.Location = new System.Drawing.Point(42, 86);
             amountOrderedProductsLabel.Name = "amountOrderedProductsLabel";
             amountOrderedProductsLabel.Size = new System.Drawing.Size(131, 13);
-            amountOrderedProductsLabel.TabIndex = 14;
+            amountOrderedProductsLabel.TabIndex = 4;
             amountOrderedProductsLabel.Text = "amount Ordered Products:";
             // 
             // amountOrderedProductsTextBox
             // 
             this.amountOrderedProductsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "amountOrderedProducts", true));
-            this.amountOrderedProductsTextBox.Location = new System.Drawing.Point(149, 71);
+            this.amountOrderedProductsTextBox.Location = new System.Drawing.Point(179, 83);
             this.amountOrderedProductsTextBox.Name = "amountOrderedProductsTextBox";
             this.amountOrderedProductsTextBox.Size = new System.Drawing.Size(200, 20);
-            this.amountOrderedProductsTextBox.TabIndex = 15;
+            this.amountOrderedProductsTextBox.TabIndex = 5;
             // 
             // dateOfOrderLabel
             // 
             dateOfOrderLabel.AutoSize = true;
-            dateOfOrderLabel.Location = new System.Drawing.Point(12, 101);
+            dateOfOrderLabel.Location = new System.Drawing.Point(42, 113);
             dateOfOrderLabel.Name = "dateOfOrderLabel";
             dateOfOrderLabel.Size = new System.Drawing.Size(74, 13);
-            dateOfOrderLabel.TabIndex = 16;
+            dateOfOrderLabel.TabIndex = 6;
             dateOfOrderLabel.Text = "date Of Order:";
             // 
             // dateOfOrderDateTimePicker
             // 
             this.dateOfOrderDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.orderBindingSource, "dateOfOrder", true));
-            this.dateOfOrderDateTimePicker.Location = new System.Drawing.Point(149, 97);
+            this.dateOfOrderDateTimePicker.Location = new System.Drawing.Point(179, 109);
             this.dateOfOrderDateTimePicker.Name = "dateOfOrderDateTimePicker";
             this.dateOfOrderDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateOfOrderDateTimePicker.TabIndex = 17;
+            this.dateOfOrderDateTimePicker.TabIndex = 7;
             // 
             // deadlineLabel
             // 
             deadlineLabel.AutoSize = true;
-            deadlineLabel.Location = new System.Drawing.Point(12, 126);
+            deadlineLabel.Location = new System.Drawing.Point(42, 138);
             deadlineLabel.Name = "deadlineLabel";
             deadlineLabel.Size = new System.Drawing.Size(50, 13);
-            deadlineLabel.TabIndex = 18;
+            deadlineLabel.TabIndex = 8;
             deadlineLabel.Text = "deadline:";
             // 
             // deadlineTextBox
             // 
             this.deadlineTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "deadline", true));
-            this.deadlineTextBox.Location = new System.Drawing.Point(149, 123);
+            this.deadlineTextBox.Location = new System.Drawing.Point(179, 135);
             this.deadlineTextBox.Name = "deadlineTextBox";
             this.deadlineTextBox.Size = new System.Drawing.Size(200, 20);
-            this.deadlineTextBox.TabIndex = 19;
+            this.deadlineTextBox.TabIndex = 9;
             // 
             // statusLabel
             // 
             statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(12, 152);
+            statusLabel.Location = new System.Drawing.Point(42, 164);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new System.Drawing.Size(38, 13);
-            statusLabel.TabIndex = 20;
+            statusLabel.TabIndex = 10;
             statusLabel.Text = "status:";
             // 
             // statusTextBox
             // 
             this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "status", true));
-            this.statusTextBox.Location = new System.Drawing.Point(149, 149);
+            this.statusTextBox.Location = new System.Drawing.Point(179, 161);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(200, 20);
-            this.statusTextBox.TabIndex = 21;
+            this.statusTextBox.TabIndex = 11;
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 487);
+            this.ClientSize = new System.Drawing.Size(800, 519);
             this.Controls.Add(documentIdLabel);
             this.Controls.Add(this.documentIdTextBox);
             this.Controls.Add(amountOrderedProductsLabel);
@@ -393,6 +393,7 @@ namespace LabPIS
         }
 
         #endregion
+
         private pisLabUpdated pisLabUpdated;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private pisLabUpdatedTableAdapters.OrderTableAdapter orderTableAdapter;
@@ -410,12 +411,12 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton orderBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView orderDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.TextBox documentIdTextBox;
         private System.Windows.Forms.TextBox amountOrderedProductsTextBox;
         private System.Windows.Forms.DateTimePicker dateOfOrderDateTimePicker;

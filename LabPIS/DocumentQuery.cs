@@ -16,5 +16,30 @@ namespace LabPIS
         {
             InitializeComponent();
         }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.dataTable1TableAdapter.Fill(this.pisLabUpdated.DataTable1, nameToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.dataTable1TableAdapter.Fill(this.pisLabUpdated.DataTable1, nameToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
