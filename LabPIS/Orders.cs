@@ -40,5 +40,15 @@ namespace LabPIS
                 MessageBox.Show("Error: " + exception.Message, " Error");
             }
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.orderBindingSource.Filter = "(amountOrderedProducts='" + textBox1.Text + "')";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            this.orderBindingSource.RemoveFilter();
+        }
     }
 }

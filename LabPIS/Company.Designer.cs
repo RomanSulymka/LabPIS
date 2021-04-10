@@ -30,31 +30,34 @@ namespace LabPIS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Company));
             System.Windows.Forms.Label companyIdLabel;
             System.Windows.Forms.Label paymentAccountLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Company));
             this.pisLabUpdated = new LabPIS.pisLabUpdated();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.CompanyTableAdapter();
             this.tableAdapterManager = new LabPIS.pisLabUpdatedTableAdapters.TableAdapterManager();
             this.companyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.companyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
             this.companyIdTextBox = new System.Windows.Forms.TextBox();
             this.paymentAccountTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             companyIdLabel = new System.Windows.Forms.Label();
             paymentAccountLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).BeginInit();
@@ -63,6 +66,24 @@ namespace LabPIS
             this.companyBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // companyIdLabel
+            // 
+            companyIdLabel.AutoSize = true;
+            companyIdLabel.Location = new System.Drawing.Point(12, 39);
+            companyIdLabel.Name = "companyIdLabel";
+            companyIdLabel.Size = new System.Drawing.Size(75, 13);
+            companyIdLabel.TabIndex = 15;
+            companyIdLabel.Text = "Код компанії:";
+            // 
+            // paymentAccountLabel
+            // 
+            paymentAccountLabel.AutoSize = true;
+            paymentAccountLabel.Location = new System.Drawing.Point(244, 35);
+            paymentAccountLabel.Name = "paymentAccountLabel";
+            paymentAccountLabel.Size = new System.Drawing.Size(85, 13);
+            paymentAccountLabel.TabIndex = 17;
+            paymentAccountLabel.Text = "Назва компанії";
             // 
             // pisLabUpdated
             // 
@@ -120,9 +141,34 @@ namespace LabPIS
             this.companyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.companyBindingNavigator.Name = "companyBindingNavigator";
             this.companyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.companyBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.companyBindingNavigator.Size = new System.Drawing.Size(449, 25);
             this.companyBindingNavigator.TabIndex = 15;
             this.companyBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -151,22 +197,16 @@ namespace LabPIS
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -174,7 +214,7 @@ namespace LabPIS
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -183,38 +223,20 @@ namespace LabPIS
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // companyBindingNavigatorSaveItem
             // 
             this.companyBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.companyBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("companyBindingNavigatorSaveItem.Image")));
             this.companyBindingNavigatorSaveItem.Name = "companyBindingNavigatorSaveItem";
-            this.companyBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.companyBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.companyBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.companyBindingNavigatorSaveItem.Click += new System.EventHandler(this.companyBindingNavigatorSaveItem_Click);
             // 
@@ -226,41 +248,23 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.companyDataGridView.DataSource = this.companyBindingSource;
-            this.companyDataGridView.Location = new System.Drawing.Point(12, 150);
+            this.companyDataGridView.Location = new System.Drawing.Point(12, 116);
             this.companyDataGridView.Name = "companyDataGridView";
             this.companyDataGridView.Size = new System.Drawing.Size(300, 220);
             this.companyDataGridView.TabIndex = 15;
             // 
-            // companyIdLabel
-            // 
-            companyIdLabel.AutoSize = true;
-            companyIdLabel.Location = new System.Drawing.Point(12, 57);
-            companyIdLabel.Name = "companyIdLabel";
-            companyIdLabel.Size = new System.Drawing.Size(65, 13);
-            companyIdLabel.TabIndex = 15;
-            companyIdLabel.Text = "company Id:";
-            // 
             // companyIdTextBox
             // 
             this.companyIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "companyId", true));
-            this.companyIdTextBox.Location = new System.Drawing.Point(111, 54);
+            this.companyIdTextBox.Location = new System.Drawing.Point(138, 32);
             this.companyIdTextBox.Name = "companyIdTextBox";
             this.companyIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.companyIdTextBox.TabIndex = 16;
             // 
-            // paymentAccountLabel
-            // 
-            paymentAccountLabel.AutoSize = true;
-            paymentAccountLabel.Location = new System.Drawing.Point(12, 83);
-            paymentAccountLabel.Name = "paymentAccountLabel";
-            paymentAccountLabel.Size = new System.Drawing.Size(93, 13);
-            paymentAccountLabel.TabIndex = 17;
-            paymentAccountLabel.Text = "payment Account:";
-            // 
             // paymentAccountTextBox
             // 
             this.paymentAccountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "paymentAccount", true));
-            this.paymentAccountTextBox.Location = new System.Drawing.Point(111, 80);
+            this.paymentAccountTextBox.Location = new System.Drawing.Point(335, 32);
             this.paymentAccountTextBox.Name = "paymentAccountTextBox";
             this.paymentAccountTextBox.Size = new System.Drawing.Size(100, 20);
             this.paymentAccountTextBox.TabIndex = 18;
@@ -268,20 +272,49 @@ namespace LabPIS
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "companyId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "companyId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код компанії";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "paymentAccount";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Company Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Назва компанії";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(244, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Пошук";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Введіть назву компанії:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(138, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 50;
             // 
             // Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(449, 364);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(companyIdLabel);
             this.Controls.Add(this.companyIdTextBox);
             this.Controls.Add(paymentAccountLabel);
@@ -289,7 +322,7 @@ namespace LabPIS
             this.Controls.Add(this.companyDataGridView);
             this.Controls.Add(this.companyBindingNavigator);
             this.Name = "Company";
-            this.Text = "Company";
+            this.Text = "Компанії";
             this.Load += new System.EventHandler(this.Company_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
@@ -325,5 +358,8 @@ namespace LabPIS
         private System.Windows.Forms.TextBox paymentAccountTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -141,5 +141,23 @@ namespace LabPIS
             CompanyQuery query = new CompanyQuery();
             query.ShowDialog();
         }
+
+        private void документиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DocumentsReport documents = new DocumentsReport();
+            documents.ShowDialog();
+        }
+
+        private void звітПроКористувачівToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientReport client = new ClientReport();
+            client.ShowDialog();
+        }
+
+        private void звітПроПродукціюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductReport product = new ProductReport();
+            product.ShowDialog();
+        }
     }
 }

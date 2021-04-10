@@ -30,31 +30,34 @@ namespace LabPIS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TypeOfAction));
             System.Windows.Forms.Label typeActionIdLabel;
             System.Windows.Forms.Label actionNameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TypeOfAction));
             this.pisLabUpdated = new LabPIS.pisLabUpdated();
             this.typeActionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typeActionTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.TypeActionTableAdapter();
             this.tableAdapterManager = new LabPIS.pisLabUpdatedTableAdapters.TableAdapterManager();
             this.typeActionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.typeActionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.typeActionDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeActionIdTextBox = new System.Windows.Forms.TextBox();
             this.actionNameTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             typeActionIdLabel = new System.Windows.Forms.Label();
             actionNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).BeginInit();
@@ -63,6 +66,24 @@ namespace LabPIS
             this.typeActionBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeActionDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // typeActionIdLabel
+            // 
+            typeActionIdLabel.AutoSize = true;
+            typeActionIdLabel.Location = new System.Drawing.Point(11, 41);
+            typeActionIdLabel.Name = "typeActionIdLabel";
+            typeActionIdLabel.Size = new System.Drawing.Size(80, 13);
+            typeActionIdLabel.TabIndex = 2;
+            typeActionIdLabel.Text = "Код типу акції:";
+            // 
+            // actionNameLabel
+            // 
+            actionNameLabel.AutoSize = true;
+            actionNameLabel.Location = new System.Drawing.Point(11, 67);
+            actionNameLabel.Name = "actionNameLabel";
+            actionNameLabel.Size = new System.Drawing.Size(68, 13);
+            actionNameLabel.TabIndex = 4;
+            actionNameLabel.Text = "Назва акції:";
             // 
             // pisLabUpdated
             // 
@@ -120,9 +141,34 @@ namespace LabPIS
             this.typeActionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.typeActionBindingNavigator.Name = "typeActionBindingNavigator";
             this.typeActionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.typeActionBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.typeActionBindingNavigator.Size = new System.Drawing.Size(458, 25);
             this.typeActionBindingNavigator.TabIndex = 0;
             this.typeActionBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -151,22 +197,16 @@ namespace LabPIS
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -174,7 +214,7 @@ namespace LabPIS
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -183,38 +223,20 @@ namespace LabPIS
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // typeActionBindingNavigatorSaveItem
             // 
             this.typeActionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.typeActionBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("typeActionBindingNavigatorSaveItem.Image")));
             this.typeActionBindingNavigatorSaveItem.Name = "typeActionBindingNavigatorSaveItem";
-            this.typeActionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.typeActionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.typeActionBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.typeActionBindingNavigatorSaveItem.Click += new System.EventHandler(this.typeActionBindingNavigatorSaveItem_Click);
             // 
@@ -226,62 +248,73 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.typeActionDataGridView.DataSource = this.typeActionBindingSource;
-            this.typeActionDataGridView.Location = new System.Drawing.Point(26, 150);
+            this.typeActionDataGridView.Location = new System.Drawing.Point(12, 95);
             this.typeActionDataGridView.Name = "typeActionDataGridView";
             this.typeActionDataGridView.Size = new System.Drawing.Size(300, 220);
             this.typeActionDataGridView.TabIndex = 1;
             // 
+            // typeActionIdTextBox
+            // 
+            this.typeActionIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeActionBindingSource, "typeActionId", true));
+            this.typeActionIdTextBox.Location = new System.Drawing.Point(97, 38);
+            this.typeActionIdTextBox.Name = "typeActionIdTextBox";
+            this.typeActionIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.typeActionIdTextBox.TabIndex = 3;
+            // 
+            // actionNameTextBox
+            // 
+            this.actionNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeActionBindingSource, "actionName", true));
+            this.actionNameTextBox.Location = new System.Drawing.Point(97, 69);
+            this.actionNameTextBox.Name = "actionNameTextBox";
+            this.actionNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.actionNameTextBox.TabIndex = 5;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "typeActionId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "typeActionId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код типу акції";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "actionName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "actionName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Назва акції";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // typeActionIdLabel
+            // button1
             // 
-            typeActionIdLabel.AutoSize = true;
-            typeActionIdLabel.Location = new System.Drawing.Point(23, 51);
-            typeActionIdLabel.Name = "typeActionIdLabel";
-            typeActionIdLabel.Size = new System.Drawing.Size(75, 13);
-            typeActionIdLabel.TabIndex = 2;
-            typeActionIdLabel.Text = "type Action Id:";
+            this.button1.Location = new System.Drawing.Point(342, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Пошук";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // typeActionIdTextBox
+            // label2
             // 
-            this.typeActionIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeActionBindingSource, "typeActionId", true));
-            this.typeActionIdTextBox.Location = new System.Drawing.Point(104, 48);
-            this.typeActionIdTextBox.Name = "typeActionIdTextBox";
-            this.typeActionIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.typeActionIdTextBox.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(209, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Введіть назву товару:";
             // 
-            // actionNameLabel
+            // textBox2
             // 
-            actionNameLabel.AutoSize = true;
-            actionNameLabel.Location = new System.Drawing.Point(23, 77);
-            actionNameLabel.Name = "actionNameLabel";
-            actionNameLabel.Size = new System.Drawing.Size(70, 13);
-            actionNameLabel.TabIndex = 4;
-            actionNameLabel.Text = "action Name:";
-            // 
-            // actionNameTextBox
-            // 
-            this.actionNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeActionBindingSource, "actionName", true));
-            this.actionNameTextBox.Location = new System.Drawing.Point(104, 74);
-            this.actionNameTextBox.Name = "actionNameTextBox";
-            this.actionNameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.actionNameTextBox.TabIndex = 5;
+            this.textBox2.Location = new System.Drawing.Point(332, 38);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 21;
             // 
             // TypeOfAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 531);
+            this.ClientSize = new System.Drawing.Size(458, 531);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(typeActionIdLabel);
             this.Controls.Add(this.typeActionIdTextBox);
             this.Controls.Add(actionNameLabel);
@@ -289,7 +322,7 @@ namespace LabPIS
             this.Controls.Add(this.typeActionDataGridView);
             this.Controls.Add(this.typeActionBindingNavigator);
             this.Name = "TypeOfAction";
-            this.Text = "TypeOfAction";
+            this.Text = "Тип акції";
             this.Load += new System.EventHandler(this.TypeOfAction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeActionBindingSource)).EndInit();
@@ -322,9 +355,12 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton typeActionBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView typeActionDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.TextBox typeActionIdTextBox;
         private System.Windows.Forms.TextBox actionNameTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

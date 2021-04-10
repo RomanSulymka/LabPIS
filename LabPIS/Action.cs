@@ -42,5 +42,15 @@ namespace LabPIS
             this.actionTableAdapter.Fill(this.pisLabUpdated.Action);
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.actionBindingSource.Filter = "(amountOfProductsForAction='" + textBox1.Text + "')";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            this.actionBindingSource.RemoveFilter();
+        }
     }
 }

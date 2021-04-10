@@ -39,5 +39,11 @@ namespace LabPIS
             this.typeActionTableAdapter.Fill(this.pisLabUpdated.TypeAction);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int itemFound = this.typeActionBindingSource.Find("actionName", textBox2.Text);
+            this.typeActionBindingSource.Position = itemFound;
+        }
     }
 }

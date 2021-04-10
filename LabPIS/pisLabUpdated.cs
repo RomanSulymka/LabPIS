@@ -4,6 +4,10 @@
 
     partial class pisLabUpdated
     {
+        partial class DocumentDataTable
+        {
+        }
+
         partial class Product1DataTable
         {
         }

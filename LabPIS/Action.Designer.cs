@@ -30,41 +30,45 @@ namespace LabPIS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Action));
             System.Windows.Forms.Label actionIdLabel;
             System.Windows.Forms.Label amountOfProductsForActionLabel;
             System.Windows.Forms.Label typeActionIdLabel;
             System.Windows.Forms.Label productIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Action));
             this.pisLabUpdated = new LabPIS.pisLabUpdated();
             this.actionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actionTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.ActionTableAdapter();
             this.tableAdapterManager = new LabPIS.pisLabUpdatedTableAdapters.TableAdapterManager();
+            this.productTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.ProductTableAdapter();
+            this.typeActionTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.TypeActionTableAdapter();
             this.actionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.actionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.actionDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionIdTextBox = new System.Windows.Forms.TextBox();
             this.amountOfProductsForActionTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.typeActionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeActionTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.TypeActionTableAdapter();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.ProductTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             actionIdLabel = new System.Windows.Forms.Label();
             amountOfProductsForActionLabel = new System.Windows.Forms.Label();
             typeActionIdLabel = new System.Windows.Forms.Label();
@@ -77,6 +81,42 @@ namespace LabPIS
             ((System.ComponentModel.ISupportInitialize)(this.typeActionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // actionIdLabel
+            // 
+            actionIdLabel.AutoSize = true;
+            actionIdLabel.Location = new System.Drawing.Point(12, 35);
+            actionIdLabel.Name = "actionIdLabel";
+            actionIdLabel.Size = new System.Drawing.Size(55, 13);
+            actionIdLabel.TabIndex = 2;
+            actionIdLabel.Text = "Код акції:";
+            // 
+            // amountOfProductsForActionLabel
+            // 
+            amountOfProductsForActionLabel.AutoSize = true;
+            amountOfProductsForActionLabel.Location = new System.Drawing.Point(179, 35);
+            amountOfProductsForActionLabel.Name = "amountOfProductsForActionLabel";
+            amountOfProductsForActionLabel.Size = new System.Drawing.Size(137, 13);
+            amountOfProductsForActionLabel.TabIndex = 4;
+            amountOfProductsForActionLabel.Text = "Кількість товарів на акції:";
+            // 
+            // typeActionIdLabel
+            // 
+            typeActionIdLabel.AutoSize = true;
+            typeActionIdLabel.Location = new System.Drawing.Point(428, 35);
+            typeActionIdLabel.Name = "typeActionIdLabel";
+            typeActionIdLabel.Size = new System.Drawing.Size(55, 13);
+            typeActionIdLabel.TabIndex = 6;
+            typeActionIdLabel.Text = "Тип акції:";
+            // 
+            // productIdLabel
+            // 
+            productIdLabel.AutoSize = true;
+            productIdLabel.Location = new System.Drawing.Point(605, 35);
+            productIdLabel.Name = "productIdLabel";
+            productIdLabel.Size = new System.Drawing.Size(41, 13);
+            productIdLabel.TabIndex = 8;
+            productIdLabel.Text = "Товар:";
             // 
             // pisLabUpdated
             // 
@@ -108,6 +148,14 @@ namespace LabPIS
             this.tableAdapterManager.TypeActionTableAdapter = this.typeActionTableAdapter;
             this.tableAdapterManager.UpdateOrder = LabPIS.pisLabUpdatedTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // typeActionTableAdapter
+            // 
+            this.typeActionTableAdapter.ClearBeforeFill = true;
+            // 
             // actionBindingNavigator
             // 
             this.actionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -138,6 +186,31 @@ namespace LabPIS
             this.actionBindingNavigator.TabIndex = 0;
             this.actionBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -165,22 +238,16 @@ namespace LabPIS
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -188,7 +255,7 @@ namespace LabPIS
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -197,38 +264,20 @@ namespace LabPIS
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // actionBindingNavigatorSaveItem
             // 
             this.actionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.actionBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("actionBindingNavigatorSaveItem.Image")));
             this.actionBindingNavigatorSaveItem.Name = "actionBindingNavigatorSaveItem";
-            this.actionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.actionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.actionBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.actionBindingNavigatorSaveItem.Click += new System.EventHandler(this.actionBindingNavigatorSaveItem_Click);
             // 
@@ -242,86 +291,26 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.actionDataGridView.DataSource = this.actionBindingSource;
-            this.actionDataGridView.Location = new System.Drawing.Point(12, 215);
+            this.actionDataGridView.Location = new System.Drawing.Point(15, 144);
             this.actionDataGridView.Name = "actionDataGridView";
-            this.actionDataGridView.Size = new System.Drawing.Size(498, 220);
+            this.actionDataGridView.Size = new System.Drawing.Size(462, 220);
             this.actionDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "actionId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "actionId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOfProductsForAction";
-            this.dataGridViewTextBoxColumn2.HeaderText = "amountOfProductsForAction";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "typeActionId";
-            this.dataGridViewTextBoxColumn3.HeaderText = "typeActionId";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "productId";
-            this.dataGridViewTextBoxColumn4.HeaderText = "productId";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // actionIdLabel
-            // 
-            actionIdLabel.AutoSize = true;
-            actionIdLabel.Location = new System.Drawing.Point(12, 49);
-            actionIdLabel.Name = "actionIdLabel";
-            actionIdLabel.Size = new System.Drawing.Size(51, 13);
-            actionIdLabel.TabIndex = 2;
-            actionIdLabel.Text = "action Id:";
             // 
             // actionIdTextBox
             // 
             this.actionIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actionBindingSource, "actionId", true));
-            this.actionIdTextBox.Location = new System.Drawing.Point(173, 46);
+            this.actionIdTextBox.Location = new System.Drawing.Point(73, 32);
             this.actionIdTextBox.Name = "actionIdTextBox";
             this.actionIdTextBox.Size = new System.Drawing.Size(100, 20);
             this.actionIdTextBox.TabIndex = 3;
             // 
-            // amountOfProductsForActionLabel
-            // 
-            amountOfProductsForActionLabel.AutoSize = true;
-            amountOfProductsForActionLabel.Location = new System.Drawing.Point(12, 75);
-            amountOfProductsForActionLabel.Name = "amountOfProductsForActionLabel";
-            amountOfProductsForActionLabel.Size = new System.Drawing.Size(155, 13);
-            amountOfProductsForActionLabel.TabIndex = 4;
-            amountOfProductsForActionLabel.Text = "amount Of Products For Action:";
-            // 
             // amountOfProductsForActionTextBox
             // 
             this.amountOfProductsForActionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.actionBindingSource, "amountOfProductsForAction", true));
-            this.amountOfProductsForActionTextBox.Location = new System.Drawing.Point(173, 72);
+            this.amountOfProductsForActionTextBox.Location = new System.Drawing.Point(322, 32);
             this.amountOfProductsForActionTextBox.Name = "amountOfProductsForActionTextBox";
             this.amountOfProductsForActionTextBox.Size = new System.Drawing.Size(100, 20);
             this.amountOfProductsForActionTextBox.TabIndex = 5;
-            // 
-            // typeActionIdLabel
-            // 
-            typeActionIdLabel.AutoSize = true;
-            typeActionIdLabel.Location = new System.Drawing.Point(12, 101);
-            typeActionIdLabel.Name = "typeActionIdLabel";
-            typeActionIdLabel.Size = new System.Drawing.Size(75, 13);
-            typeActionIdLabel.TabIndex = 6;
-            typeActionIdLabel.Text = "type Action Id:";
-            // 
-            // productIdLabel
-            // 
-            productIdLabel.AutoSize = true;
-            productIdLabel.Location = new System.Drawing.Point(12, 127);
-            productIdLabel.Name = "productIdLabel";
-            productIdLabel.Size = new System.Drawing.Size(58, 13);
-            productIdLabel.TabIndex = 8;
-            productIdLabel.Text = "product Id:";
             // 
             // comboBox1
             // 
@@ -329,11 +318,16 @@ namespace LabPIS
             this.comboBox1.DataSource = this.typeActionBindingSource;
             this.comboBox1.DisplayMember = "actionName";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 101);
+            this.comboBox1.Location = new System.Drawing.Point(489, 32);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 21);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.ValueMember = "typeActionId";
+            // 
+            // typeActionBindingSource
+            // 
+            this.typeActionBindingSource.DataMember = "TypeAction";
+            this.typeActionBindingSource.DataSource = this.pisLabUpdated;
             // 
             // comboBox2
             // 
@@ -341,35 +335,100 @@ namespace LabPIS
             this.comboBox2.DataSource = this.productBindingSource;
             this.comboBox2.DisplayMember = "productName";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(173, 129);
+            this.comboBox2.Location = new System.Drawing.Point(652, 32);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 21);
             this.comboBox2.TabIndex = 10;
             this.comboBox2.ValueMember = "productId";
-            // 
-            // typeActionBindingSource
-            // 
-            this.typeActionBindingSource.DataMember = "TypeAction";
-            this.typeActionBindingSource.DataSource = this.pisLabUpdated;
-            // 
-            // typeActionTableAdapter
-            // 
-            this.typeActionTableAdapter.ClearBeforeFill = true;
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "Product";
             this.productBindingSource.DataSource = this.pisLabUpdated;
             // 
-            // productTableAdapter
+            // label1
             // 
-            this.productTableAdapter.ClearBeforeFill = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(284, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Введіть кількість товарів по акції";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(386, 111);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(91, 17);
+            this.radioButton2.TabIndex = 20;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Зняти фільтр";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(274, 111);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(101, 17);
+            this.radioButton1.TabIndex = 19;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Відфільтрувати";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(321, 85);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "actionId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код акції";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOfProductsForAction";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Кількість товарів по акції";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "typeActionId";
+            this.dataGridViewTextBoxColumn3.DataSource = this.typeActionBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "actionName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Тип акції";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "typeActionId";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "productId";
+            this.dataGridViewTextBoxColumn4.DataSource = this.productBindingSource;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "productName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Товар";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "ProductId";
             // 
             // Action
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(actionIdLabel);
@@ -381,7 +440,7 @@ namespace LabPIS
             this.Controls.Add(this.actionDataGridView);
             this.Controls.Add(this.actionBindingNavigator);
             this.Name = "Action";
-            this.Text = "Action";
+            this.Text = "Акції";
             this.Load += new System.EventHandler(this.Action_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actionBindingSource)).EndInit();
@@ -416,10 +475,6 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton actionBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView actionDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private pisLabUpdatedTableAdapters.TypeActionTableAdapter typeActionTableAdapter;
         private System.Windows.Forms.TextBox actionIdTextBox;
         private System.Windows.Forms.TextBox amountOfProductsForActionTextBox;
@@ -428,5 +483,13 @@ namespace LabPIS
         private System.Windows.Forms.BindingSource typeActionBindingSource;
         private pisLabUpdatedTableAdapters.ProductTableAdapter productTableAdapter;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
     }
 }

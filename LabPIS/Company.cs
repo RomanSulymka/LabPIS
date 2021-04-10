@@ -41,5 +41,11 @@ namespace LabPIS
                 MessageBox.Show("Error: " + exception.Message, " Error");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int itemFound = this.companyBindingSource.Find("paymentAccount", textBox2.Text);
+            this.companyBindingSource.Position = itemFound;
+        }
     }
 }

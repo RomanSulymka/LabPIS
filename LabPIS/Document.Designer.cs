@@ -54,20 +54,20 @@ namespace LabPIS
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.documentBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.documentDataGridView = new System.Windows.Forms.DataGridView();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.ClientTableAdapter();
-            this.personalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personalTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.PersonalTableAdapter();
-            this.documentIdTextBox = new System.Windows.Forms.TextBox();
-            this.documentTypeTextBox = new System.Windows.Forms.TextBox();
-            this.dataOfRegistrationDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.clientIdComboBox = new System.Windows.Forms.ComboBox();
-            this.personalIdComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentIdTextBox = new System.Windows.Forms.TextBox();
+            this.documentTypeTextBox = new System.Windows.Forms.TextBox();
+            this.dataOfRegistrationDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.clientIdComboBox = new System.Windows.Forms.ComboBox();
+            this.personalIdComboBox = new System.Windows.Forms.ComboBox();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.ClientTableAdapter();
+            this.personalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personalTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.PersonalTableAdapter();
             documentIdLabel = new System.Windows.Forms.Label();
             documentTypeLabel = new System.Windows.Forms.Label();
             dataOfRegistrationLabel = new System.Windows.Forms.Label();
@@ -138,9 +138,10 @@ namespace LabPIS
             this.documentBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.documentBindingNavigator.Name = "documentBindingNavigator";
             this.documentBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.documentBindingNavigator.Size = new System.Drawing.Size(646, 25);
-            this.documentBindingNavigator.TabIndex = 22;
+            this.documentBindingNavigator.Size = new System.Drawing.Size(872, 25);
+            this.documentBindingNavigator.TabIndex = 0;
             this.documentBindingNavigator.Text = "bindingNavigator1";
+            this.documentBindingNavigator.RefreshItems += new System.EventHandler(this.documentBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -234,7 +235,7 @@ namespace LabPIS
             this.documentBindingNavigatorSaveItem.Name = "documentBindingNavigatorSaveItem";
             this.documentBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.documentBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.documentBindingNavigatorSaveItem.Click += new System.EventHandler(this.documentBindingNavigatorSaveItem_Click);
+            this.documentBindingNavigatorSaveItem.Click += new System.EventHandler(this.documentBindingNavigatorSaveItem_Click_1);
             // 
             // documentDataGridView
             // 
@@ -247,123 +248,10 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.documentDataGridView.DataSource = this.documentBindingSource;
-            this.documentDataGridView.Location = new System.Drawing.Point(12, 240);
+            this.documentDataGridView.Location = new System.Drawing.Point(12, 46);
             this.documentDataGridView.Name = "documentDataGridView";
-            this.documentDataGridView.Size = new System.Drawing.Size(559, 220);
-            this.documentDataGridView.TabIndex = 22;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataMember = "Client";
-            this.clientBindingSource.DataSource = this.pisLabUpdated;
-            // 
-            // clientTableAdapter
-            // 
-            this.clientTableAdapter.ClearBeforeFill = true;
-            // 
-            // personalBindingSource
-            // 
-            this.personalBindingSource.DataMember = "Personal";
-            this.personalBindingSource.DataSource = this.pisLabUpdated;
-            // 
-            // personalTableAdapter
-            // 
-            this.personalTableAdapter.ClearBeforeFill = true;
-            // 
-            // documentIdLabel
-            // 
-            documentIdLabel.AutoSize = true;
-            documentIdLabel.Location = new System.Drawing.Point(12, 81);
-            documentIdLabel.Name = "documentIdLabel";
-            documentIdLabel.Size = new System.Drawing.Size(69, 13);
-            documentIdLabel.TabIndex = 22;
-            documentIdLabel.Text = "document Id:";
-            // 
-            // documentIdTextBox
-            // 
-            this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "documentId", true));
-            this.documentIdTextBox.Location = new System.Drawing.Point(122, 78);
-            this.documentIdTextBox.Name = "documentIdTextBox";
-            this.documentIdTextBox.Size = new System.Drawing.Size(200, 20);
-            this.documentIdTextBox.TabIndex = 23;
-            // 
-            // documentTypeLabel
-            // 
-            documentTypeLabel.AutoSize = true;
-            documentTypeLabel.Location = new System.Drawing.Point(12, 107);
-            documentTypeLabel.Name = "documentTypeLabel";
-            documentTypeLabel.Size = new System.Drawing.Size(84, 13);
-            documentTypeLabel.TabIndex = 24;
-            documentTypeLabel.Text = "document Type:";
-            // 
-            // documentTypeTextBox
-            // 
-            this.documentTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "documentType", true));
-            this.documentTypeTextBox.Location = new System.Drawing.Point(122, 104);
-            this.documentTypeTextBox.Name = "documentTypeTextBox";
-            this.documentTypeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.documentTypeTextBox.TabIndex = 25;
-            // 
-            // dataOfRegistrationLabel
-            // 
-            dataOfRegistrationLabel.AutoSize = true;
-            dataOfRegistrationLabel.Location = new System.Drawing.Point(12, 134);
-            dataOfRegistrationLabel.Name = "dataOfRegistrationLabel";
-            dataOfRegistrationLabel.Size = new System.Drawing.Size(104, 13);
-            dataOfRegistrationLabel.TabIndex = 26;
-            dataOfRegistrationLabel.Text = "data Of Registration:";
-            // 
-            // dataOfRegistrationDateTimePicker
-            // 
-            this.dataOfRegistrationDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.documentBindingSource, "dataOfRegistration", true));
-            this.dataOfRegistrationDateTimePicker.Location = new System.Drawing.Point(122, 130);
-            this.dataOfRegistrationDateTimePicker.Name = "dataOfRegistrationDateTimePicker";
-            this.dataOfRegistrationDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dataOfRegistrationDateTimePicker.TabIndex = 27;
-            // 
-            // clientIdLabel
-            // 
-            clientIdLabel.AutoSize = true;
-            clientIdLabel.Location = new System.Drawing.Point(12, 159);
-            clientIdLabel.Name = "clientIdLabel";
-            clientIdLabel.Size = new System.Drawing.Size(47, 13);
-            clientIdLabel.TabIndex = 28;
-            clientIdLabel.Text = "client Id:";
-            // 
-            // clientIdComboBox
-            // 
-            this.clientIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "clientId", true));
-            this.clientIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.documentBindingSource, "clientId", true));
-            this.clientIdComboBox.DataSource = this.clientBindingSource;
-            this.clientIdComboBox.DisplayMember = "clientName";
-            this.clientIdComboBox.FormattingEnabled = true;
-            this.clientIdComboBox.Location = new System.Drawing.Point(122, 156);
-            this.clientIdComboBox.Name = "clientIdComboBox";
-            this.clientIdComboBox.Size = new System.Drawing.Size(200, 21);
-            this.clientIdComboBox.TabIndex = 29;
-            this.clientIdComboBox.ValueMember = "clientId";
-            // 
-            // personalIdLabel
-            // 
-            personalIdLabel.AutoSize = true;
-            personalIdLabel.Location = new System.Drawing.Point(12, 186);
-            personalIdLabel.Name = "personalIdLabel";
-            personalIdLabel.Size = new System.Drawing.Size(62, 13);
-            personalIdLabel.TabIndex = 30;
-            personalIdLabel.Text = "personal Id:";
-            // 
-            // personalIdComboBox
-            // 
-            this.personalIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "personalId", true));
-            this.personalIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.documentBindingSource, "personalId", true));
-            this.personalIdComboBox.DataSource = this.personalBindingSource;
-            this.personalIdComboBox.DisplayMember = "surname";
-            this.personalIdComboBox.FormattingEnabled = true;
-            this.personalIdComboBox.Location = new System.Drawing.Point(122, 183);
-            this.personalIdComboBox.Name = "personalIdComboBox";
-            this.personalIdComboBox.Size = new System.Drawing.Size(200, 21);
-            this.personalIdComboBox.TabIndex = 31;
-            this.personalIdComboBox.ValueMember = "personalId";
+            this.documentDataGridView.Size = new System.Drawing.Size(561, 220);
+            this.documentDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -388,20 +276,131 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn4.DataPropertyName = "clientId";
             this.dataGridViewTextBoxColumn4.HeaderText = "clientId";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "personalId";
             this.dataGridViewTextBoxColumn5.HeaderText = "personalId";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // documentIdLabel
+            // 
+            documentIdLabel.AutoSize = true;
+            documentIdLabel.Location = new System.Drawing.Point(698, 34);
+            documentIdLabel.Name = "documentIdLabel";
+            documentIdLabel.Size = new System.Drawing.Size(69, 13);
+            documentIdLabel.TabIndex = 2;
+            documentIdLabel.Text = "document Id:";
+            // 
+            // documentIdTextBox
+            // 
+            this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "documentId", true));
+            this.documentIdTextBox.Location = new System.Drawing.Point(638, 52);
+            this.documentIdTextBox.Name = "documentIdTextBox";
+            this.documentIdTextBox.Size = new System.Drawing.Size(200, 20);
+            this.documentIdTextBox.TabIndex = 3;
+            // 
+            // documentTypeLabel
+            // 
+            documentTypeLabel.AutoSize = true;
+            documentTypeLabel.Location = new System.Drawing.Point(698, 85);
+            documentTypeLabel.Name = "documentTypeLabel";
+            documentTypeLabel.Size = new System.Drawing.Size(84, 13);
+            documentTypeLabel.TabIndex = 4;
+            documentTypeLabel.Text = "document Type:";
+            // 
+            // documentTypeTextBox
+            // 
+            this.documentTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "documentType", true));
+            this.documentTypeTextBox.Location = new System.Drawing.Point(638, 101);
+            this.documentTypeTextBox.Name = "documentTypeTextBox";
+            this.documentTypeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.documentTypeTextBox.TabIndex = 5;
+            // 
+            // dataOfRegistrationLabel
+            // 
+            dataOfRegistrationLabel.AutoSize = true;
+            dataOfRegistrationLabel.Location = new System.Drawing.Point(688, 137);
+            dataOfRegistrationLabel.Name = "dataOfRegistrationLabel";
+            dataOfRegistrationLabel.Size = new System.Drawing.Size(104, 13);
+            dataOfRegistrationLabel.TabIndex = 6;
+            dataOfRegistrationLabel.Text = "data Of Registration:";
+            // 
+            // dataOfRegistrationDateTimePicker
+            // 
+            this.dataOfRegistrationDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.documentBindingSource, "dataOfRegistration", true));
+            this.dataOfRegistrationDateTimePicker.Location = new System.Drawing.Point(638, 153);
+            this.dataOfRegistrationDateTimePicker.Name = "dataOfRegistrationDateTimePicker";
+            this.dataOfRegistrationDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dataOfRegistrationDateTimePicker.TabIndex = 7;
+            // 
+            // clientIdLabel
+            // 
+            clientIdLabel.AutoSize = true;
+            clientIdLabel.Location = new System.Drawing.Point(720, 188);
+            clientIdLabel.Name = "clientIdLabel";
+            clientIdLabel.Size = new System.Drawing.Size(47, 13);
+            clientIdLabel.TabIndex = 8;
+            clientIdLabel.Text = "client Id:";
+            // 
+            // clientIdComboBox
+            // 
+            this.clientIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "clientId", true));
+            this.clientIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.documentBindingSource, "clientId", true));
+            this.clientIdComboBox.DataSource = this.clientBindingSource;
+            this.clientIdComboBox.DisplayMember = "clientName";
+            this.clientIdComboBox.FormattingEnabled = true;
+            this.clientIdComboBox.Location = new System.Drawing.Point(638, 204);
+            this.clientIdComboBox.Name = "clientIdComboBox";
+            this.clientIdComboBox.Size = new System.Drawing.Size(200, 21);
+            this.clientIdComboBox.TabIndex = 9;
+            this.clientIdComboBox.ValueMember = "clientId";
+            // 
+            // personalIdLabel
+            // 
+            personalIdLabel.AutoSize = true;
+            personalIdLabel.Location = new System.Drawing.Point(705, 238);
+            personalIdLabel.Name = "personalIdLabel";
+            personalIdLabel.Size = new System.Drawing.Size(62, 13);
+            personalIdLabel.TabIndex = 10;
+            personalIdLabel.Text = "personal Id:";
+            // 
+            // personalIdComboBox
+            // 
+            this.personalIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.documentBindingSource, "personalId", true));
+            this.personalIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.documentBindingSource, "personalId", true));
+            this.personalIdComboBox.DataSource = this.personalBindingSource;
+            this.personalIdComboBox.DisplayMember = "surname";
+            this.personalIdComboBox.FormattingEnabled = true;
+            this.personalIdComboBox.Location = new System.Drawing.Point(638, 254);
+            this.personalIdComboBox.Name = "personalIdComboBox";
+            this.personalIdComboBox.Size = new System.Drawing.Size(200, 21);
+            this.personalIdComboBox.TabIndex = 11;
+            this.personalIdComboBox.ValueMember = "personalId";
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "Client";
+            this.clientBindingSource.DataSource = this.pisLabUpdated;
+            // 
+            // clientTableAdapter
+            // 
+            this.clientTableAdapter.ClearBeforeFill = true;
+            // 
+            // personalBindingSource
+            // 
+            this.personalBindingSource.DataMember = "Personal";
+            this.personalBindingSource.DataSource = this.pisLabUpdated;
+            // 
+            // personalTableAdapter
+            // 
+            this.personalTableAdapter.ClearBeforeFill = true;
             // 
             // Document
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 551);
+            this.ClientSize = new System.Drawing.Size(872, 551);
             this.Controls.Add(documentIdLabel);
             this.Controls.Add(this.documentIdTextBox);
             this.Controls.Add(documentTypeLabel);
@@ -415,7 +414,7 @@ namespace LabPIS
             this.Controls.Add(this.documentDataGridView);
             this.Controls.Add(this.documentBindingNavigator);
             this.Name = "Document";
-            this.Text = "Document";
+            this.Text = "Документи";
             this.Load += new System.EventHandler(this.Document_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
@@ -431,6 +430,7 @@ namespace LabPIS
         }
 
         #endregion
+
         private pisLabUpdated pisLabUpdated;
         private System.Windows.Forms.BindingSource documentBindingSource;
         private pisLabUpdatedTableAdapters.DocumentTableAdapter documentTableAdapter;
@@ -450,18 +450,18 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripButton documentBindingNavigatorSaveItem;
         private pisLabUpdatedTableAdapters.ClientTableAdapter clientTableAdapter;
         private System.Windows.Forms.DataGridView documentDataGridView;
-        private System.Windows.Forms.BindingSource clientBindingSource;
-        private pisLabUpdatedTableAdapters.PersonalTableAdapter personalTableAdapter;
-        private System.Windows.Forms.BindingSource personalBindingSource;
-        private System.Windows.Forms.TextBox documentIdTextBox;
-        private System.Windows.Forms.TextBox documentTypeTextBox;
-        private System.Windows.Forms.DateTimePicker dataOfRegistrationDateTimePicker;
-        private System.Windows.Forms.ComboBox clientIdComboBox;
-        private System.Windows.Forms.ComboBox personalIdComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.TextBox documentIdTextBox;
+        private System.Windows.Forms.TextBox documentTypeTextBox;
+        private System.Windows.Forms.DateTimePicker dataOfRegistrationDateTimePicker;
+        private System.Windows.Forms.ComboBox clientIdComboBox;
+        private System.Windows.Forms.ComboBox personalIdComboBox;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private pisLabUpdatedTableAdapters.PersonalTableAdapter personalTableAdapter;
+        private System.Windows.Forms.BindingSource personalBindingSource;
     }
 }

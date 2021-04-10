@@ -28,13 +28,19 @@ namespace LabPIS
             this.documentTableAdapter.Fill(this.pisLabUpdated.Document);
         }
 
-        private void bindingNavigatorCountItem_Click(object sender, EventArgs e)
-        {
 
+     /*   private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.documentBindingSource.Filter = "(documentType='" + textBox1.Text + "')";
         }
 
-     
-        private void documentBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            this.documentBindingSource.RemoveFilter();
+
+        }
+     */
+        private void documentBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.documentBindingSource.EndEdit();
@@ -46,6 +52,12 @@ namespace LabPIS
             {
                 MessageBox.Show("Error: " + exception.Message, " Error");
             }
+
+        }
+
+        private void documentBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
         }
     }
 }

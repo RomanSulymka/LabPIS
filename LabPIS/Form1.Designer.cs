@@ -272,6 +272,7 @@ namespace LabPIS
             this.звітПроКористувачівToolStripMenuItem.Name = "звітПроКористувачівToolStripMenuItem";
             this.звітПроКористувачівToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.звітПроКористувачівToolStripMenuItem.Text = "Звіт про клієнтів";
+            this.звітПроКористувачівToolStripMenuItem.Click += new System.EventHandler(this.звітПроКористувачівToolStripMenuItem_Click);
             // 
             // звітПроКомпаніїToolStripMenuItem
             // 
@@ -290,6 +291,7 @@ namespace LabPIS
             this.звітПроПродукціюToolStripMenuItem.Name = "звітПроПродукціюToolStripMenuItem";
             this.звітПроПродукціюToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.звітПроПродукціюToolStripMenuItem.Text = "Звіт про продукцію";
+            this.звітПроПродукціюToolStripMenuItem.Click += new System.EventHandler(this.звітПроПродукціюToolStripMenuItem_Click);
             // 
             // звітПроАкціїToolStripMenuItem
             // 
@@ -314,6 +316,7 @@ namespace LabPIS
             this.документиToolStripMenuItem.Name = "документиToolStripMenuItem";
             this.документиToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.документиToolStripMenuItem.Text = "Документи";
+            this.документиToolStripMenuItem.Click += new System.EventHandler(this.документиToolStripMenuItem_Click);
             // 
             // типАкціїToolStripMenuItem2
             // 

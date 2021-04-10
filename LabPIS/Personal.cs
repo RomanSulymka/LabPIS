@@ -54,5 +54,12 @@ namespace LabPIS
                 MessageBox.Show("Error: " + exception.Message, " Error");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int itemFound = this.personalBindingSource.Find("surname", textBox2.Text);
+
+            this.personalBindingSource.Position = itemFound;
+        }
     }
 }

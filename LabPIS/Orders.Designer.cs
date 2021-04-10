@@ -30,40 +30,44 @@ namespace LabPIS
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
             System.Windows.Forms.Label documentIdLabel;
             System.Windows.Forms.Label amountOrderedProductsLabel;
             System.Windows.Forms.Label dateOfOrderLabel;
             System.Windows.Forms.Label deadlineLabel;
             System.Windows.Forms.Label statusLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
             this.pisLabUpdated = new LabPIS.pisLabUpdated();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.OrderTableAdapter();
             this.tableAdapterManager = new LabPIS.pisLabUpdatedTableAdapters.TableAdapterManager();
             this.orderBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.orderBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.orderDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentIdTextBox = new System.Windows.Forms.TextBox();
             this.amountOrderedProductsTextBox = new System.Windows.Forms.TextBox();
             this.dateOfOrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.deadlineTextBox = new System.Windows.Forms.TextBox();
             this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             documentIdLabel = new System.Windows.Forms.Label();
             amountOrderedProductsLabel = new System.Windows.Forms.Label();
             dateOfOrderLabel = new System.Windows.Forms.Label();
@@ -75,6 +79,51 @@ namespace LabPIS
             this.orderBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // documentIdLabel
+            // 
+            documentIdLabel.AutoSize = true;
+            documentIdLabel.Location = new System.Drawing.Point(627, 25);
+            documentIdLabel.Name = "documentIdLabel";
+            documentIdLabel.Size = new System.Drawing.Size(86, 13);
+            documentIdLabel.TabIndex = 2;
+            documentIdLabel.Text = "Код документа:";
+            // 
+            // amountOrderedProductsLabel
+            // 
+            amountOrderedProductsLabel.AutoSize = true;
+            amountOrderedProductsLabel.Location = new System.Drawing.Point(597, 73);
+            amountOrderedProductsLabel.Name = "amountOrderedProductsLabel";
+            amountOrderedProductsLabel.Size = new System.Drawing.Size(160, 13);
+            amountOrderedProductsLabel.TabIndex = 4;
+            amountOrderedProductsLabel.Text = "Кількість замовлених товарів:";
+            // 
+            // dateOfOrderLabel
+            // 
+            dateOfOrderLabel.AutoSize = true;
+            dateOfOrderLabel.Location = new System.Drawing.Point(628, 116);
+            dateOfOrderLabel.Name = "dateOfOrderLabel";
+            dateOfOrderLabel.Size = new System.Drawing.Size(101, 13);
+            dateOfOrderLabel.TabIndex = 6;
+            dateOfOrderLabel.Text = "Дата замовлення:";
+            // 
+            // deadlineLabel
+            // 
+            deadlineLabel.AutoSize = true;
+            deadlineLabel.Location = new System.Drawing.Point(634, 165);
+            deadlineLabel.Name = "deadlineLabel";
+            deadlineLabel.Size = new System.Drawing.Size(95, 13);
+            deadlineLabel.TabIndex = 8;
+            deadlineLabel.Text = "Термін доставки:";
+            // 
+            // statusLabel
+            // 
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new System.Drawing.Point(653, 210);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new System.Drawing.Size(44, 13);
+            statusLabel.TabIndex = 10;
+            statusLabel.Text = "Статус:";
             // 
             // pisLabUpdated
             // 
@@ -136,6 +185,31 @@ namespace LabPIS
             this.orderBindingNavigator.TabIndex = 0;
             this.orderBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -163,22 +237,16 @@ namespace LabPIS
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -186,7 +254,7 @@ namespace LabPIS
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -195,38 +263,20 @@ namespace LabPIS
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // orderBindingNavigatorSaveItem
             // 
             this.orderBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.orderBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("orderBindingNavigatorSaveItem.Image")));
             this.orderBindingNavigatorSaveItem.Name = "orderBindingNavigatorSaveItem";
-            this.orderBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.orderBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.orderBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.orderBindingNavigatorSaveItem.Click += new System.EventHandler(this.orderBindingNavigatorSaveItem_Click_1);
             // 
@@ -241,131 +291,130 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.orderDataGridView.DataSource = this.orderBindingSource;
-            this.orderDataGridView.Location = new System.Drawing.Point(45, 209);
+            this.orderDataGridView.Location = new System.Drawing.Point(12, 40);
             this.orderDataGridView.Name = "orderDataGridView";
-            this.orderDataGridView.Size = new System.Drawing.Size(546, 220);
+            this.orderDataGridView.Size = new System.Drawing.Size(546, 292);
             this.orderDataGridView.TabIndex = 1;
+            // 
+            // documentIdTextBox
+            // 
+            this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "documentId", true));
+            this.documentIdTextBox.Location = new System.Drawing.Point(578, 41);
+            this.documentIdTextBox.Name = "documentIdTextBox";
+            this.documentIdTextBox.Size = new System.Drawing.Size(200, 20);
+            this.documentIdTextBox.TabIndex = 3;
+            // 
+            // amountOrderedProductsTextBox
+            // 
+            this.amountOrderedProductsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "amountOrderedProducts", true));
+            this.amountOrderedProductsTextBox.Location = new System.Drawing.Point(579, 89);
+            this.amountOrderedProductsTextBox.Name = "amountOrderedProductsTextBox";
+            this.amountOrderedProductsTextBox.Size = new System.Drawing.Size(200, 20);
+            this.amountOrderedProductsTextBox.TabIndex = 5;
+            // 
+            // dateOfOrderDateTimePicker
+            // 
+            this.dateOfOrderDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.orderBindingSource, "dateOfOrder", true));
+            this.dateOfOrderDateTimePicker.Location = new System.Drawing.Point(579, 132);
+            this.dateOfOrderDateTimePicker.Name = "dateOfOrderDateTimePicker";
+            this.dateOfOrderDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateOfOrderDateTimePicker.TabIndex = 7;
+            // 
+            // deadlineTextBox
+            // 
+            this.deadlineTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "deadline", true));
+            this.deadlineTextBox.Location = new System.Drawing.Point(579, 181);
+            this.deadlineTextBox.Name = "deadlineTextBox";
+            this.deadlineTextBox.Size = new System.Drawing.Size(200, 20);
+            this.deadlineTextBox.TabIndex = 9;
+            // 
+            // statusTextBox
+            // 
+            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "status", true));
+            this.statusTextBox.Location = new System.Drawing.Point(579, 226);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.Size = new System.Drawing.Size(200, 20);
+            this.statusTextBox.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "documentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код документа";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOrderedProducts";
-            this.dataGridViewTextBoxColumn2.HeaderText = "amountOrderedProducts";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Кількість замовлених товарів";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "dateOfOrder";
-            this.dataGridViewTextBoxColumn3.HeaderText = "dateOfOrder";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Дата замовлення";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "deadline";
-            this.dataGridViewTextBoxColumn4.HeaderText = "deadline";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Термін доставки";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "status";
-            this.dataGridViewTextBoxColumn5.HeaderText = "status";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Статус";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // documentIdLabel
+            // label1
             // 
-            documentIdLabel.AutoSize = true;
-            documentIdLabel.Location = new System.Drawing.Point(42, 60);
-            documentIdLabel.Name = "documentIdLabel";
-            documentIdLabel.Size = new System.Drawing.Size(69, 13);
-            documentIdLabel.TabIndex = 2;
-            documentIdLabel.Text = "document Id:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(581, 258);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Введіть кількість замовлених товарів";
             // 
-            // documentIdTextBox
+            // radioButton2
             // 
-            this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "documentId", true));
-            this.documentIdTextBox.Location = new System.Drawing.Point(179, 57);
-            this.documentIdTextBox.Name = "documentIdTextBox";
-            this.documentIdTextBox.Size = new System.Drawing.Size(200, 20);
-            this.documentIdTextBox.TabIndex = 3;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(699, 300);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(91, 17);
+            this.radioButton2.TabIndex = 24;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Зняти фільтр";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // amountOrderedProductsLabel
+            // radioButton1
             // 
-            amountOrderedProductsLabel.AutoSize = true;
-            amountOrderedProductsLabel.Location = new System.Drawing.Point(42, 86);
-            amountOrderedProductsLabel.Name = "amountOrderedProductsLabel";
-            amountOrderedProductsLabel.Size = new System.Drawing.Size(131, 13);
-            amountOrderedProductsLabel.TabIndex = 4;
-            amountOrderedProductsLabel.Text = "amount Ordered Products:";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(587, 300);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(101, 17);
+            this.radioButton1.TabIndex = 23;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Відфільтрувати";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // amountOrderedProductsTextBox
+            // textBox1
             // 
-            this.amountOrderedProductsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "amountOrderedProducts", true));
-            this.amountOrderedProductsTextBox.Location = new System.Drawing.Point(179, 83);
-            this.amountOrderedProductsTextBox.Name = "amountOrderedProductsTextBox";
-            this.amountOrderedProductsTextBox.Size = new System.Drawing.Size(200, 20);
-            this.amountOrderedProductsTextBox.TabIndex = 5;
-            // 
-            // dateOfOrderLabel
-            // 
-            dateOfOrderLabel.AutoSize = true;
-            dateOfOrderLabel.Location = new System.Drawing.Point(42, 113);
-            dateOfOrderLabel.Name = "dateOfOrderLabel";
-            dateOfOrderLabel.Size = new System.Drawing.Size(74, 13);
-            dateOfOrderLabel.TabIndex = 6;
-            dateOfOrderLabel.Text = "date Of Order:";
-            // 
-            // dateOfOrderDateTimePicker
-            // 
-            this.dateOfOrderDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.orderBindingSource, "dateOfOrder", true));
-            this.dateOfOrderDateTimePicker.Location = new System.Drawing.Point(179, 109);
-            this.dateOfOrderDateTimePicker.Name = "dateOfOrderDateTimePicker";
-            this.dateOfOrderDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateOfOrderDateTimePicker.TabIndex = 7;
-            // 
-            // deadlineLabel
-            // 
-            deadlineLabel.AutoSize = true;
-            deadlineLabel.Location = new System.Drawing.Point(42, 138);
-            deadlineLabel.Name = "deadlineLabel";
-            deadlineLabel.Size = new System.Drawing.Size(50, 13);
-            deadlineLabel.TabIndex = 8;
-            deadlineLabel.Text = "deadline:";
-            // 
-            // deadlineTextBox
-            // 
-            this.deadlineTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "deadline", true));
-            this.deadlineTextBox.Location = new System.Drawing.Point(179, 135);
-            this.deadlineTextBox.Name = "deadlineTextBox";
-            this.deadlineTextBox.Size = new System.Drawing.Size(200, 20);
-            this.deadlineTextBox.TabIndex = 9;
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(42, 164);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(38, 13);
-            statusLabel.TabIndex = 10;
-            statusLabel.Text = "status:";
-            // 
-            // statusTextBox
-            // 
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "status", true));
-            this.statusTextBox.Location = new System.Drawing.Point(179, 161);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(200, 20);
-            this.statusTextBox.TabIndex = 11;
+            this.textBox1.Location = new System.Drawing.Point(579, 274);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(199, 20);
+            this.textBox1.TabIndex = 22;
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 519);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(documentIdLabel);
             this.Controls.Add(this.documentIdTextBox);
             this.Controls.Add(amountOrderedProductsLabel);
@@ -379,7 +428,7 @@ namespace LabPIS
             this.Controls.Add(this.orderDataGridView);
             this.Controls.Add(this.orderBindingNavigator);
             this.Name = "Orders";
-            this.Text = "Orders";
+            this.Text = "Замовлення";
             this.Load += new System.EventHandler(this.Orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
@@ -412,15 +461,19 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton orderBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView orderDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.TextBox documentIdTextBox;
         private System.Windows.Forms.TextBox amountOrderedProductsTextBox;
         private System.Windows.Forms.DateTimePicker dateOfOrderDateTimePicker;
         private System.Windows.Forms.TextBox deadlineTextBox;
         private System.Windows.Forms.TextBox statusTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
