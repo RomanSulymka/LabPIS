@@ -52,12 +52,12 @@ namespace LabPIS
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.invoiceBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
-            this.documentIdTextBox = new System.Windows.Forms.TextBox();
-            this.dateOfReceiptDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.numberOfTheActOfAcceptanceTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentIdTextBox = new System.Windows.Forms.TextBox();
+            this.dateOfReceiptDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.numberOfTheActOfAcceptanceTextBox = new System.Windows.Forms.TextBox();
             documentIdLabel = new System.Windows.Forms.Label();
             dateOfReceiptLabel = new System.Windows.Forms.Label();
             numberOfTheActOfAcceptanceLabel = new System.Windows.Forms.Label();
@@ -151,7 +151,7 @@ namespace LabPIS
             this.invoiceBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.invoiceBindingNavigator.Name = "invoiceBindingNavigator";
             this.invoiceBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.invoiceBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.invoiceBindingNavigator.Size = new System.Drawing.Size(456, 25);
             this.invoiceBindingNavigator.TabIndex = 8;
             this.invoiceBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -264,6 +264,24 @@ namespace LabPIS
             this.invoiceDataGridView.Size = new System.Drawing.Size(381, 137);
             this.invoiceDataGridView.TabIndex = 8;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код накладної";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "dateOfReceipt";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Дата оформлення";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "numberOfTheActOfAcceptance";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Номер акту прийняття";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // documentIdTextBox
             // 
             this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "documentId", true));
@@ -288,29 +306,11 @@ namespace LabPIS
             this.numberOfTheActOfAcceptanceTextBox.Size = new System.Drawing.Size(200, 20);
             this.numberOfTheActOfAcceptanceTextBox.TabIndex = 13;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Код накладної";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "dateOfReceipt";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Дата оформлення";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "numberOfTheActOfAcceptance";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Номер акту прийняття";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(456, 485);
             this.Controls.Add(documentIdLabel);
             this.Controls.Add(this.documentIdTextBox);
             this.Controls.Add(dateOfReceiptLabel);

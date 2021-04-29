@@ -54,20 +54,20 @@ namespace LabPIS
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.orderBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.orderDataGridView = new System.Windows.Forms.DataGridView();
-            this.documentIdTextBox = new System.Windows.Forms.TextBox();
-            this.amountOrderedProductsTextBox = new System.Windows.Forms.TextBox();
-            this.dateOfOrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.deadlineTextBox = new System.Windows.Forms.TextBox();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.documentIdTextBox = new System.Windows.Forms.TextBox();
+            this.amountOrderedProductsTextBox = new System.Windows.Forms.TextBox();
+            this.dateOfOrderDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.deadlineTextBox = new System.Windows.Forms.TextBox();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             documentIdLabel = new System.Windows.Forms.Label();
             amountOrderedProductsLabel = new System.Windows.Forms.Label();
             dateOfOrderLabel = new System.Windows.Forms.Label();
@@ -296,6 +296,36 @@ namespace LabPIS
             this.orderDataGridView.Size = new System.Drawing.Size(546, 292);
             this.orderDataGridView.TabIndex = 1;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код документа";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOrderedProducts";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Кількість замовлених товарів";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "dateOfOrder";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Дата замовлення";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "deadline";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Термін доставки";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "status";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Статус";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
             // documentIdTextBox
             // 
             this.documentIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "documentId", true));
@@ -336,56 +366,12 @@ namespace LabPIS
             this.statusTextBox.Size = new System.Drawing.Size(200, 20);
             this.statusTextBox.TabIndex = 11;
             // 
-            // dataGridViewTextBoxColumn1
+            // textBox1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "documentId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Код документа";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "amountOrderedProducts";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Кількість замовлених товарів";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "dateOfOrder";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Дата замовлення";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "deadline";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Термін доставки";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "status";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Статус";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(581, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Введіть кількість замовлених товарів";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(699, 300);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 17);
-            this.radioButton2.TabIndex = 24;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Зняти фільтр";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.textBox1.Location = new System.Drawing.Point(579, 274);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(199, 20);
+            this.textBox1.TabIndex = 22;
             // 
             // radioButton1
             // 
@@ -399,12 +385,26 @@ namespace LabPIS
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // textBox1
+            // radioButton2
             // 
-            this.textBox1.Location = new System.Drawing.Point(579, 274);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 22;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(699, 300);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(91, 17);
+            this.radioButton2.TabIndex = 24;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Зняти фільтр";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(581, 258);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Введіть кількість замовлених товарів";
             // 
             // Orders
             // 
@@ -471,9 +471,9 @@ namespace LabPIS
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label1;
     }
 }

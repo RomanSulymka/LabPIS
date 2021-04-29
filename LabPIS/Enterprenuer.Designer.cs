@@ -52,12 +52,12 @@ namespace LabPIS
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.enterprenuerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.enterprenuerDataGridView = new System.Windows.Forms.DataGridView();
-            this.enterprenuerIdTextBox = new System.Windows.Forms.TextBox();
-            this.taxNumberTextBox = new System.Windows.Forms.TextBox();
-            this.cashRegisterTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enterprenuerIdTextBox = new System.Windows.Forms.TextBox();
+            this.taxNumberTextBox = new System.Windows.Forms.TextBox();
+            this.cashRegisterTextBox = new System.Windows.Forms.TextBox();
             enterprenuerIdLabel = new System.Windows.Forms.Label();
             taxNumberLabel = new System.Windows.Forms.Label();
             cashRegisterLabel = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@ namespace LabPIS
             // enterprenuerIdLabel
             // 
             enterprenuerIdLabel.AutoSize = true;
-            enterprenuerIdLabel.Location = new System.Drawing.Point(28, 74);
+            enterprenuerIdLabel.Location = new System.Drawing.Point(421, 28);
             enterprenuerIdLabel.Name = "enterprenuerIdLabel";
             enterprenuerIdLabel.Size = new System.Drawing.Size(90, 13);
             enterprenuerIdLabel.TabIndex = 2;
@@ -80,7 +80,7 @@ namespace LabPIS
             // taxNumberLabel
             // 
             taxNumberLabel.AutoSize = true;
-            taxNumberLabel.Location = new System.Drawing.Point(16, 100);
+            taxNumberLabel.Location = new System.Drawing.Point(416, 74);
             taxNumberLabel.Name = "taxNumberLabel";
             taxNumberLabel.Size = new System.Drawing.Size(106, 13);
             taxNumberLabel.TabIndex = 4;
@@ -89,7 +89,7 @@ namespace LabPIS
             // cashRegisterLabel
             // 
             cashRegisterLabel.AutoSize = true;
-            cashRegisterLabel.Location = new System.Drawing.Point(18, 126);
+            cashRegisterLabel.Location = new System.Drawing.Point(415, 127);
             cashRegisterLabel.Name = "cashRegisterLabel";
             cashRegisterLabel.Size = new System.Drawing.Size(103, 13);
             cashRegisterLabel.TabIndex = 6;
@@ -151,7 +151,7 @@ namespace LabPIS
             this.enterprenuerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.enterprenuerBindingNavigator.Name = "enterprenuerBindingNavigator";
             this.enterprenuerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.enterprenuerBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.enterprenuerBindingNavigator.Size = new System.Drawing.Size(535, 25);
             this.enterprenuerBindingNavigator.TabIndex = 0;
             this.enterprenuerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -259,34 +259,10 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.enterprenuerDataGridView.DataSource = this.enterprenuerBindingSource;
-            this.enterprenuerDataGridView.Location = new System.Drawing.Point(24, 177);
+            this.enterprenuerDataGridView.Location = new System.Drawing.Point(12, 28);
             this.enterprenuerDataGridView.Name = "enterprenuerDataGridView";
             this.enterprenuerDataGridView.Size = new System.Drawing.Size(384, 220);
             this.enterprenuerDataGridView.TabIndex = 1;
-            // 
-            // enterprenuerIdTextBox
-            // 
-            this.enterprenuerIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enterprenuerBindingSource, "enterprenuerId", true));
-            this.enterprenuerIdTextBox.Location = new System.Drawing.Point(131, 71);
-            this.enterprenuerIdTextBox.Name = "enterprenuerIdTextBox";
-            this.enterprenuerIdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.enterprenuerIdTextBox.TabIndex = 3;
-            // 
-            // taxNumberTextBox
-            // 
-            this.taxNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enterprenuerBindingSource, "taxNumber", true));
-            this.taxNumberTextBox.Location = new System.Drawing.Point(131, 97);
-            this.taxNumberTextBox.Name = "taxNumberTextBox";
-            this.taxNumberTextBox.Size = new System.Drawing.Size(100, 20);
-            this.taxNumberTextBox.TabIndex = 5;
-            // 
-            // cashRegisterTextBox
-            // 
-            this.cashRegisterTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enterprenuerBindingSource, "cashRegister", true));
-            this.cashRegisterTextBox.Location = new System.Drawing.Point(131, 123);
-            this.cashRegisterTextBox.Name = "cashRegisterTextBox";
-            this.cashRegisterTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cashRegisterTextBox.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -306,11 +282,35 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn3.HeaderText = "Назва підприємця";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
+            // enterprenuerIdTextBox
+            // 
+            this.enterprenuerIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enterprenuerBindingSource, "enterprenuerId", true));
+            this.enterprenuerIdTextBox.Location = new System.Drawing.Point(416, 44);
+            this.enterprenuerIdTextBox.Name = "enterprenuerIdTextBox";
+            this.enterprenuerIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.enterprenuerIdTextBox.TabIndex = 3;
+            // 
+            // taxNumberTextBox
+            // 
+            this.taxNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enterprenuerBindingSource, "taxNumber", true));
+            this.taxNumberTextBox.Location = new System.Drawing.Point(416, 94);
+            this.taxNumberTextBox.Name = "taxNumberTextBox";
+            this.taxNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.taxNumberTextBox.TabIndex = 5;
+            // 
+            // cashRegisterTextBox
+            // 
+            this.cashRegisterTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.enterprenuerBindingSource, "cashRegister", true));
+            this.cashRegisterTextBox.Location = new System.Drawing.Point(416, 143);
+            this.cashRegisterTextBox.Name = "cashRegisterTextBox";
+            this.cashRegisterTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cashRegisterTextBox.TabIndex = 7;
+            // 
             // Enterprenuer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 558);
+            this.ClientSize = new System.Drawing.Size(535, 266);
             this.Controls.Add(enterprenuerIdLabel);
             this.Controls.Add(this.enterprenuerIdTextBox);
             this.Controls.Add(taxNumberLabel);
