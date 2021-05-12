@@ -49,17 +49,20 @@ namespace LabPIS
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.product1BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
-            this.p1ToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.p1ToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.product1DataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter = new LabPIS.pisLabUpdatedTableAdapters.ProductTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product1BindingNavigator)).BeginInit();
             this.product1BindingNavigator.SuspendLayout();
             this.fillToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product1DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pisLabUpdated
@@ -135,8 +138,8 @@ namespace LabPIS
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
@@ -175,7 +178,6 @@ namespace LabPIS
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -229,12 +231,6 @@ namespace LabPIS
             this.fillToolStrip.TabIndex = 1;
             this.fillToolStrip.Text = "fillToolStrip";
             // 
-            // p1ToolStripTextBox
-            // 
-            this.p1ToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.p1ToolStripTextBox.Name = "p1ToolStripTextBox";
-            this.p1ToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
             // fillToolStripButton
             // 
             this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -243,18 +239,29 @@ namespace LabPIS
             this.fillToolStripButton.Text = "Виконати запит за ціною:";
             this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
             // 
+            // p1ToolStripTextBox
+            // 
+            this.p1ToolStripTextBox.Name = "p1ToolStripTextBox";
+            this.p1ToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
             // product1DataGridView
             // 
             this.product1DataGridView.AutoGenerateColumns = false;
             this.product1DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.product1DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn1});
             this.product1DataGridView.DataSource = this.product1BindingSource;
             this.product1DataGridView.Location = new System.Drawing.Point(12, 83);
             this.product1DataGridView.Name = "product1DataGridView";
             this.product1DataGridView.Size = new System.Drawing.Size(300, 220);
             this.product1DataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "productName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "productName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -263,11 +270,14 @@ namespace LabPIS
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // productBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "productName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "productName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.pisLabUpdated;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
             // 
             // ProductQuery
             // 
@@ -278,7 +288,7 @@ namespace LabPIS
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.product1BindingNavigator);
             this.Name = "ProductQuery";
-            this.Text = "ProductQuery";
+            this.Text = "Перевірка наявності товарів за ціною";
             this.Load += new System.EventHandler(this.ProductQuery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pisLabUpdated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product1BindingSource)).EndInit();
@@ -288,6 +298,7 @@ namespace LabPIS
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product1DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,7 +327,9 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripTextBox p1ToolStripTextBox;
         private System.Windows.Forms.ToolStripButton fillToolStripButton;
         private System.Windows.Forms.DataGridView product1DataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private pisLabUpdatedTableAdapters.ProductTableAdapter productTableAdapter;
     }
 }

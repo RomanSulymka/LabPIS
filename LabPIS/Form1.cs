@@ -159,5 +159,22 @@ namespace LabPIS
             ProductReport product = new ProductReport();
             product.ShowDialog();
         }
+
+        private void звітПроЗамовленняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderReport order = new OrderReport();
+            order.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AboutMe open = new AboutMe();
+            open.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

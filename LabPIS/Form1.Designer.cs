@@ -32,7 +32,6 @@ namespace LabPIS
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.QueryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.товарToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.акціяToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.персоналToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.клієнтToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.введенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +47,12 @@ namespace LabPIS
             this.приватнийПідприємецьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.звітиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.звітПроКористувачівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.звітПроЗамовленняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.звітПроПродукціюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.накладнаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.документиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.акціїToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +73,6 @@ namespace LabPIS
             // 
             this.QueryMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.товарToolStripMenuItem1,
-            this.акціяToolStripMenuItem1,
             this.персоналToolStripMenuItem1,
             this.клієнтToolStripMenuItem1});
             this.QueryMenuItem.Name = "QueryMenuItem";
@@ -86,13 +85,6 @@ namespace LabPIS
             this.товарToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
             this.товарToolStripMenuItem1.Text = "Список товарів";
             this.товарToolStripMenuItem1.Click += new System.EventHandler(this.товарToolStripMenuItem1_Click);
-            // 
-            // акціяToolStripMenuItem1
-            // 
-            this.акціяToolStripMenuItem1.Name = "акціяToolStripMenuItem1";
-            this.акціяToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
-            this.акціяToolStripMenuItem1.Text = "Акції";
-            this.акціяToolStripMenuItem1.Click += new System.EventHandler(this.акціяToolStripMenuItem1_Click);
             // 
             // персоналToolStripMenuItem1
             // 
@@ -199,9 +191,7 @@ namespace LabPIS
             // 
             this.звітиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.звітПроКористувачівToolStripMenuItem,
-            this.звітПроЗамовленняToolStripMenuItem,
             this.звітПроПродукціюToolStripMenuItem,
-            this.накладнаToolStripMenuItem1,
             this.документиToolStripMenuItem});
             this.звітиToolStripMenuItem.Name = "звітиToolStripMenuItem";
             this.звітиToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
@@ -210,33 +200,21 @@ namespace LabPIS
             // звітПроКористувачівToolStripMenuItem
             // 
             this.звітПроКористувачівToolStripMenuItem.Name = "звітПроКористувачівToolStripMenuItem";
-            this.звітПроКористувачівToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.звітПроКористувачівToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.звітПроКористувачівToolStripMenuItem.Text = "Складання звіту про клієнтів";
             this.звітПроКористувачівToolStripMenuItem.Click += new System.EventHandler(this.звітПроКористувачівToolStripMenuItem_Click);
-            // 
-            // звітПроЗамовленняToolStripMenuItem
-            // 
-            this.звітПроЗамовленняToolStripMenuItem.Name = "звітПроЗамовленняToolStripMenuItem";
-            this.звітПроЗамовленняToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
-            this.звітПроЗамовленняToolStripMenuItem.Text = "Створення звіту про замовлення";
             // 
             // звітПроПродукціюToolStripMenuItem
             // 
             this.звітПроПродукціюToolStripMenuItem.Name = "звітПроПродукціюToolStripMenuItem";
-            this.звітПроПродукціюToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.звітПроПродукціюToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.звітПроПродукціюToolStripMenuItem.Text = "Створення звіту про продукцію";
             this.звітПроПродукціюToolStripMenuItem.Click += new System.EventHandler(this.звітПроПродукціюToolStripMenuItem_Click);
-            // 
-            // накладнаToolStripMenuItem1
-            // 
-            this.накладнаToolStripMenuItem1.Name = "накладнаToolStripMenuItem1";
-            this.накладнаToolStripMenuItem1.Size = new System.Drawing.Size(254, 22);
-            this.накладнаToolStripMenuItem1.Text = "Оформлення накладної";
             // 
             // документиToolStripMenuItem
             // 
             this.документиToolStripMenuItem.Name = "документиToolStripMenuItem";
-            this.документиToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.документиToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.документиToolStripMenuItem.Text = "Оформлення документів";
             this.документиToolStripMenuItem.Click += new System.EventHandler(this.документиToolStripMenuItem_Click);
             // 
@@ -246,15 +224,50 @@ namespace LabPIS
             this.акціїToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.акціїToolStripMenuItem.Text = "Акції";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(90, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(625, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Інформаційна система ТОВ \"Біскотті\"";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(329, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 42);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Вихід";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(329, 129);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(142, 38);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Про автора";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "КН-4-5ск Сулимка Роман ПІС";
+            this.Text = "Сулимка Роман курсова робота";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -280,15 +293,15 @@ namespace LabPIS
         private System.Windows.Forms.ToolStripMenuItem QueryMenuItem;
         private System.Windows.Forms.ToolStripMenuItem звітиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem звітПроКористувачівToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem звітПроЗамовленняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem звітПроПродукціюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem накладнаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem документиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem товарToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem акціяToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem персоналToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem клієнтToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem акціїToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

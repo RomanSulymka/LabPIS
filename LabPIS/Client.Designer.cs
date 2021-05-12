@@ -407,7 +407,7 @@ namespace LabPIS
             this.typeActionBindingNavigatorSaveItem.Name = "typeActionBindingNavigatorSaveItem";
             this.typeActionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.typeActionBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.typeActionBindingNavigatorSaveItem.Click += new System.EventHandler(this.typeActionBindingNavigatorSaveItem_Click);
+            this.typeActionBindingNavigatorSaveItem.Click += new System.EventHandler(this.clientBindingNavigatorSaveItem_Click);
             // 
             // clientIdTextBox
             // 

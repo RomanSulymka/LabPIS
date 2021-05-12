@@ -30,7 +30,7 @@ namespace LabPIS
 
         }
 
-        private void typeActionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void clientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.clientBindingSource.EndEdit();

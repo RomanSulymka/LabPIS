@@ -19,6 +19,10 @@ namespace LabPIS
 
         private void ProductQuery_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Product". При необходимости она может быть перемещена или удалена.
+            this.productTableAdapter.Fill(this.pisLabUpdated.Product);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pisLabUpdated.Product". При необходимости она может быть перемещена или удалена.
+            this.productTableAdapter.Fill(this.pisLabUpdated.Product);
 
         }
 
@@ -36,6 +40,11 @@ namespace LabPIS
         }
 
         private void p1ToolStripLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
